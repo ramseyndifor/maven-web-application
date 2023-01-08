@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: us-west-2
-  ECR_REPOSITORY: 489062853934.dkr.ecr.us-west-2.amazonaws.com/ecs-maven
+  ECR_REPOSITORY: ecs-maven
   ECS_SERVICE: xashy-serv
   ECS_CLUSTER: maven-cluster
   ECS_TASK_DEFINITION: taks-definition.json
