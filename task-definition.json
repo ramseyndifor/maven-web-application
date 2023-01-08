@@ -1,116 +1,100 @@
 {
-  "ipcMode": null,
-  "executionRoleArn": "arn:aws:iam::185908282995:role/ecsTaskExecutionRole",
-  "containerDefinitions": [
-    {
-      "dnsSearchDomains": null,
-      "environmentFiles": null,
-      "logConfiguration": {
-        "logDriver": "awslogs",
-        "secretOptions": null,
-        "options": {
-          "awslogs-group": "/ecs/prod-mavenwebapp",
-          "awslogs-region": "us-east-1",
-          "awslogs-stream-prefix": "ecs"
-        }
-      },
-      "entryPoint": [],
-      "portMappings": [
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:489062853934:task-definition/xashy-application:2",
+    "containerDefinitions": [
         {
-          "hostPort": 8080,
-          "protocol": "tcp",
-          "containerPort": 8080
+            "name": "maven-app",
+            "image": "ramsey14/maven-web-app:latest",
+            "cpu": 0,
+            "links": [],
+            "portMappings": [
+                {
+                    "name": "maven-app-8080-tcp",
+                    "containerPort": 8080,
+                    "hostPort": 8080,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "entryPoint": [],
+            "command": [],
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "secrets": [],
+            "dnsServers": [],
+            "dnsSearchDomains": [],
+            "extraHosts": [],
+            "dockerSecurityOptions": [],
+            "dockerLabels": {},
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/xashy-application",
+                    "awslogs-region": "us-west-2",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
         }
-      ],
-      "command": [],
-      "linuxParameters": null,
-      "cpu": 0,
-      "environment": [],
-      "resourceRequirements": null,
-      "ulimits": null,
-      "dnsServers": null,
-      "mountPoints": [],
-      "workingDirectory": null,
-      "secrets": null,
-      "dockerSecurityOptions": null,
-      "memory": null,
-      "memoryReservation": null,
-      "volumesFrom": [],
-      "stopTimeout": null,
-      "image": "drixone/sampleapp:latest",
-      "startTimeout": null,
-      "firelensConfiguration": null,
-      "dependsOn": null,
-      "disableNetworking": null,
-      "interactive": null,
-      "healthCheck": null,
-      "essential": true,
-      "links": null,
-      "hostname": null,
-      "extraHosts": null,
-      "pseudoTerminal": null,
-      "user": null,
-      "readonlyRootFilesystem": null,
-      "dockerLabels": null,
-      "systemControls": null,
-      "privileged": null,
-      "name": "maven-web-app"
-    }
-  ],
-  "placementConstraints": [],
-  "memory": "4096",
-  "taskRoleArn": null,
-  "compatibilities": [
-    "EC2",
-    "FARGATE"
-  ],
-  "taskDefinitionArn": "arn:aws:ecs:us-east-1:185908282995:task-definition/prod-mavenwebapp:1",
-  "family": "prod-mavenwebapp",
-  "requiresAttributes": [
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+    ],
+    "family": "xashy-application",
+    "executionRoleArn": "arn:aws:iam::489062853934:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 2,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "3072",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
     },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "ecs.capability.execution-role-awslogs"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-    },
-    {
-      "targetId": null,
-      "targetType": null,
-      "value": null,
-      "name": "ecs.capability.task-eni"
-    }
-  ],
-  "pidMode": null,
-  "requiresCompatibilities": [
-    "FARGATE"
-  ],
-  "networkMode": "awsvpc",
-  "runtimePlatform": {
-    "operatingSystemFamily": "LINUX",
-    "cpuArchitecture": null
-  },
-  "cpu": "2048",
-  "revision": 1,
-  "status": "ACTIVE",
-  "inferenceAccelerators": null,
-  "proxyConfiguration": null,
-  "volumes": []
+    "registeredAt": "2023-01-08T18:43:46.423Z",
+    "registeredBy": "arn:aws:iam::489062853934:user/Ramsey",
+    "tags": [
+        {
+            "key": "ecs:taskDefinition:createdFrom",
+            "value": "ecs-console-v2"
+        },
+        {
+            "key": "ecs:taskDefinition:stackId",
+            "value": "arn:aws:cloudformation:us-west-2:489062853934:stack/ECS-Console-V2-TaskDefinition-8b6db7f7-f024-4a3d-a628-bb9279be81ab/9abe7680-8f81-11ed-badf-02cb8bf96a91"
+        }
+    ]
 }
