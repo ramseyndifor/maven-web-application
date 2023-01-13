@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: us-west-2
-  ECR_REPOSITORY: lovydovy
+  ECR_REPOSITORY: ecs-deploy
   ECS_SERVICE: lovydovy-service
   ECS_CLUSTER: lovydovy-cluster
   ECS_TASK_DEFINITION: task-definition.json
