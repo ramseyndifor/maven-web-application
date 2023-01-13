@@ -9,7 +9,7 @@ env:
   ECR_REPOSITORY: lovydovy
   ECS_SERVICE: lovydovy-service
   ECS_CLUSTER: lovydovy-cluster
-  ECS_TASK_DEFINITION: taks-definition.json
+  ECS_TASK_DEFINITION: task-definition.json
   CONTAINER_NAME: lovydovy
 
 permissions:
