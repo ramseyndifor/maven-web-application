@@ -1,14 +1,14 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-west-2:489062853934:task-definition/xashy-application:2",
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:489062853934:task-definition/lovydovy-taskdef:1",
     "containerDefinitions": [
         {
-            "name": "maven-app",
-            "image": "ramsey14/maven-web-app:latest",
+            "name": "lovydovy",
+            "image": "ramsey14/maven-web-app",
             "cpu": 0,
             "links": [],
             "portMappings": [
                 {
-                    "name": "maven-app-8080-tcp",
+                    "name": "lovydovy-8080-tcp",
                     "containerPort": 8080,
                     "hostPort": 8080,
                     "protocol": "tcp",
@@ -29,35 +29,16 @@
             "dockerSecurityOptions": [],
             "dockerLabels": {},
             "ulimits": [],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/xashy-application",
-                    "awslogs-region": "us-west-2",
-                    "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
-            },
             "systemControls": []
         }
     ],
-    "family": "xashy-application",
+    "family": "lovydovy-taskdef",
     "executionRoleArn": "arn:aws:iam::489062853934:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
         },
@@ -66,9 +47,6 @@
         },
         {
             "name": "ecs.capability.task-eni"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
@@ -85,7 +63,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-01-08T18:43:46.423Z",
+    "registeredAt": "2023-01-13T03:55:27.282Z",
     "registeredBy": "arn:aws:iam::489062853934:user/Ramsey",
     "tags": [
         {
@@ -94,7 +72,7 @@
         },
         {
             "key": "ecs:taskDefinition:stackId",
-            "value": "arn:aws:cloudformation:us-west-2:489062853934:stack/ECS-Console-V2-TaskDefinition-8b6db7f7-f024-4a3d-a628-bb9279be81ab/9abe7680-8f81-11ed-badf-02cb8bf96a91"
+            "value": "arn:aws:cloudformation:us-west-2:489062853934:stack/ECS-Console-V2-TaskDefinition-48a7ae95-61c9-40fa-be46-b3937f16d84e/1a9d9b20-92f6-11ed-99cf-02546f9f95bb"
         }
     ]
 }
